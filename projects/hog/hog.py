@@ -23,6 +23,14 @@ def roll_dice(num_rolls, dice=six_sided):
     assert num_rolls > 0, 'Must roll at least once.'
     # BEGIN PROBLEM 1
     "*** YOUR CODE HERE ***"
+    k = 0
+    d = []
+    while k < num_rolls:
+        d.append(dice())
+        k += 1
+    if 1 in d:
+        return 1
+    return sum(d)
     # END PROBLEM 1
 
 
@@ -32,13 +40,13 @@ def free_bacon(score):
     score:  The opponent's current score.
     """
     assert score < 100, 'The game should be over.'
-    pi = FIRST_101_DIGITS_OF_PI
+    pi = FIRST_101_DIGITS_OF_PI  # 是一个101位的整数
 
     # Trim pi to only (score + 1) digit(s)
     # BEGIN PROBLEM 2
     "*** YOUR CODE HERE ***"
+    pi = pi // pow(10, 100 - score)  # 整除去除后面的小数
     # END PROBLEM 2
-
     return pi % 10 + 3
 
 
@@ -57,6 +65,7 @@ def take_turn(num_rolls, opponent_score, dice=six_sided):
     assert opponent_score < 100, 'The game should be over.'
     # BEGIN PROBLEM 3
     "*** YOUR CODE HERE ***"
+    
     # END PROBLEM 3
 
 
